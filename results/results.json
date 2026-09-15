@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "author": "Shivansh Gautam",
+    "training": "Infosys Springboard - Explore Machine Learning using R",
+    "timestamp": "2026-09-15 18:26:41.739283",
+    "r_version": "R version 4.6.1 (2026-06-24 ucrt)",
+    "seed_configured": 1606
+  },
+  "simple_regression": {
+    "r_squared": 0.9271,
+    "adj_r_squared": 0.9266,
+    "rmse": 0.475,
+    "mae": 0.3658,
+    "f_statistic": 1882.4524,
+    "p_value": 4.675e-86,
+    "n_obs": 150
+  },
+  "multiple_regression": {
+    "r_squared": 0.968,
+    "adj_r_squared": 0.9674,
+    "rmse": 0.3147,
+    "mae": 0.2401,
+    "f_statistic": 1472.7262,
+    "p_value": 6.9769e-109,
+    "n_obs": 150
+  },
+  "vif": [
+    {
+      "Predictor": "Sepal.Length",
+      "Auxiliary_R2": 0.7072,
+      "VIF": 3.4157,
+      "Status": "Acceptable (< 5)"
+    },
+    {
+      "Predictor": "Sepal.Width",
+      "Auxiliary_R2": 0.234,
+      "VIF": 1.3055,
+      "Status": "Acceptable (< 5)"
+    },
+    {
+      "Predictor": "Petal.Width",
+      "Auxiliary_R2": 0.7429,
+      "VIF": 3.89,
+      "Status": "Acceptable (< 5)"
+    }
+  ],
+  "logistic_regression": {
+    "threshold_0.5": {
+      "accuracy": 0.94,
+      "precision": 0.94,
+      "recall": 0.94,
+      "f1": 0.94,
+      "tn": 47,
+      "fp": 3,
+      "fn": 3,
+      "tp": 47
+    },
+    "benchmarks": [
+      {
+        "Threshold": 0.3,
+        "Computed_Accuracy": 0.96,
+        "Reported_Accuracy": 0.96,
+        "Computed_F1": 0.9608,
+        "TN": 47,
+        "FP": 3,
+        "FN": 1,
+        "TP": 49,
+        "Match": true
+      },
+      {
+        "Threshold": 0.5,
+        "Computed_Accuracy": 0.94,
+        "Reported_Accuracy": 0.94,
+        "Computed_F1": 0.94,
+        "TN": 47,
+        "FP": 3,
+        "FN": 3,
+        "TP": 47,
+        "Match": true
+      },
+      {
+        "Threshold": 0.7,
+        "Computed_Accuracy": 0.95,
+        "Reported_Accuracy": 0.95,
+        "Computed_F1": 0.9495,
+        "TN": 48,
+        "FP": 2,
+        "FN": 3,
+        "TP": 47,
+        "Match": true
+      }
+    ]
+  },
+  "decision_tree": {
+    "depth_3": {
+      "test_accuracy": 0.9778,
+      "macro_f1": 0.9778,
+      "leaves": 4
+    },
+    "unrestricted": {
+      "train_accuracy": 1,
+      "test_accuracy": 0.9333
+    },
+    "overfitting_experiment": [
+      {
+        "Depth_Value": 2,
+        "Depth_Label": "Depth 2",
+        "Leaves": 3,
+        "Train_Accuracy": 0.9619,
+        "Test_Accuracy": 0.9556,
+        "Train_Macro_F1": 0.9618,
+        "Test_Macro_F1": 0.9556,
+        "Divergence": 0.0063
+      },
+      {
+        "Depth_Value": 3,
+        "Depth_Label": "Depth 3 (Benchmark)",
+        "Leaves": 4,
+        "Train_Accuracy": 0.9714,
+        "Test_Accuracy": 0.9778,
+        "Train_Macro_F1": 0.9714,
+        "Test_Macro_F1": 0.9778,
+        "Divergence": -0.0063
+      },
+      {
+        "Depth_Value": 4,
+        "Depth_Label": "Depth 4",
+        "Leaves": 6,
+        "Train_Accuracy": 0.9905,
+        "Test_Accuracy": 0.9333,
+        "Train_Macro_F1": 0.9905,
+        "Test_Macro_F1": 0.9327,
+        "Divergence": 0.0571
+      },
+      {
+        "Depth_Value": 30,
+        "Depth_Label": "Unrestricted",
+        "Leaves": 7,
+        "Train_Accuracy": 1,
+        "Test_Accuracy": 0.9333,
+        "Train_Macro_F1": 1,
+        "Test_Macro_F1": 0.9327,
+        "Divergence": 0.0667
+      }
+    ]
+  },
+  "knn": {
+    "raw_k5": {
+      "accuracy": 0.9778,
+      "macro_f1": 0.9778
+    },
+    "norm_k5": {
+      "accuracy": 0.9333,
+      "macro_f1": 0.9333
+    },
+    "interpretation": "Key Experimental Finding on Feature Scaling: At first glance, the drop in KNN performance from 97.78% (Raw) to 93.33% (Min-Max Normalised) appears counterintuitive because KNN is a distance-based metric. \n\nHowever, all four Iris features were already measured in the identical physical unit (centimetres) and possess naturally comparable absolute ranges (petal length 1–7 cm, petal width 0.1–2.5 cm, sepal length 4–8 cm). Consequently, feature scaling was not correcting a meaningful dimensional imbalance. \n\nInstead, min-max normalisation compressed the highly discriminative petal measurements into the exact same [0, 1] interval as the less informative sepal measurements, diluting the dominant petal signal. \n\nMethodological Takeaway: Feature normalisation is a targeted corrective remedy for genuine scale disparities, not a default preprocessing ritual to be executed unthinkingly."
+  },
+  "validation_summary": {
+    "total_checks": 26,
+    "passed_checks": 26
+  }
+}

@@ -1,0 +1,50 @@
+================================================================================
+               INDUSTRIAL TRAINING MODEL VALIDATION REPORT                      
+   'Machine Learning Fundamentals: A Study of Predictive Modelling using R'     
+                   Author: Shivansh Gautam | MIT Bengaluru                     
+================================================================================
+Date/Time: 2026-09-15 18:26:42.450165
+R Version: R version 4.6.1 (2026-06-24 ucrt)
+Random Seed Configured: 1606 (Stratified 105 Train / 45 Test)
+--------------------------------------------------------------------------------
+MODEL                        METRIC               TARGET     COMPUTED   STATUS  
+--------------------------------------------------------------------------------
+Simple Linear Regression     R²                  0.9271     0.9271     [PASS]
+Simple Linear Regression     Adjusted R²         0.9266     0.9266     [PASS]
+Simple Linear Regression     RMSE (cm)            0.4750     0.4750     [PASS]
+Simple Linear Regression     Slope (Petal.Width)  2.2299     2.2299     [PASS]
+Multiple Linear Regression   R²                  0.9680     0.9680     [PASS]
+Multiple Linear Regression   Adjusted R²         0.9674     0.9674     [PASS]
+Multiple Linear Regression   RMSE (cm)            0.3147     0.3147     [PASS]
+Multiple Linear Regression   Coef: Petal.Width    1.4468     1.4468     [PASS]
+Multiple Linear Regression   Coef: Sepal.Length   0.7291     0.7291     [PASS]
+Multiple Linear Regression   Coef: Sepal.Width    -0.6460    -0.6460    [PASS]
+Multicollinearity            VIF: Petal.Width     3.8900     3.8900     [PASS]
+Multicollinearity            VIF: Sepal.Length    3.4160     3.4157     [PASS]
+Multicollinearity            VIF: Sepal.Width     1.3060     1.3055     [PASS]
+Logistic (th=0.5)            Accuracy             0.9400     0.9400     [PASS]
+Logistic (th=0.5)            F1-Score             0.9400     0.9400     [PASS]
+Logistic (th=0.5)            TN Count             47.0000    47.0000    [PASS]
+Logistic (th=0.5)            TP Count             47.0000    47.0000    [PASS]
+Logistic (th=0.3)            Accuracy             0.9600     0.9600     [PASS]
+Logistic (th=0.7)            Accuracy             0.9500     0.9500     [PASS]
+Decision Tree (Depth 3)      Test Accuracy        0.9778     0.9778     [PASS]
+Decision Tree (Depth 3)      Test Macro F1        0.9778     0.9778     [PASS]
+Decision Tree (Unrestricted) Train Accuracy       1.0000     1.0000     [PASS]
+Decision Tree (Unrestricted) Test Accuracy        0.9333     0.9333     [PASS]
+KNN (Raw, k=5)               Test Accuracy        0.9778     0.9778     [PASS]
+KNN (Normalised, k=5)        Test Accuracy        0.9333     0.9333     [PASS]
+KNN (Normalised, k=5)        Test Macro F1        0.9327     0.9333     [PASS]
+--------------------------------------------------------------------------------
+SUMMARY: 26 / 26 Validation Checks Passed (100.0%)
+================================================================================
+CRITICAL VERIFICATIONS:
+ [✓] Simple Linear Regression: R² = 0.9271, RMSE = 0.4750 cm
+ [✓] Multiple Linear Regression: R² = 0.9680, RMSE = 0.3147 cm
+ [✓] Multicollinearity: Petal.Width slope changes 2.2299 -> 1.4468 (VIFs < 4.0)
+ [✓] Logistic Regression: 94.00% Accuracy (TN=47, TP=47, FP=3, FN=3)
+ [✓] Threshold Sensitivity: 0.3 -> 96%, 0.5 -> 94%, 0.7 -> 95%
+ [✓] Decision Tree (Depth 3): 97.78% Test Accuracy, Macro F1 = 0.9778
+ [✓] Overfitting Divergence: Unrestricted Tree reaches 100% Train vs 93.33% Test
+ [✓] KNN Scaling Impact: 97.78% (Raw) vs 93.33% (Min-Max Normalised)
+================================================================================

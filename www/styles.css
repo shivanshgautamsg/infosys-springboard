@@ -1,0 +1,304 @@
+/* ==============================================================================
+   INDUSTRIAL TRAINING ML LABORATORY - CUSTOM STYLESHEET
+   Aesthetic: Clean Academic / Technical Laboratory (Slate, Indigo, Emerald)
+   Author: Reconstructed for Shivansh Gautam (Infosys Springboard ML in R)
+   ============================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #eff6ff;
+  --indigo: #4f46e5;
+  --indigo-light: #eef2ff;
+  --emerald: #059669;
+  --emerald-light: #ecfdf5;
+  --amber: #d97706;
+  --amber-light: #fffbeb;
+  --rose: #e11d48;
+  --rose-light: #fff1f2;
+  --border-color: #e2e8f0;
+  --border-radius: 8px;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  font-size: 0.925rem;
+}
+
+/* Monospace for numbers, code, formulas */
+code, pre, .stat-value, .formula-badge {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Header & Navbar */
+.navbar {
+  box-shadow: var(--shadow-sm);
+  background-color: #0f172a !important;
+  border-bottom: 1px solid #1e293b;
+  padding: 0.6rem 1.5rem;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #f8fafc !important;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-brand .badge-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  color: #94a3b8 !important;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.15s ease-in-out;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: 6px;
+}
+
+.nav-link:hover {
+  color: #f8fafc !important;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.nav-link.active {
+  color: #ffffff !important;
+  background-color: #2563eb !important;
+  font-weight: 600;
+}
+
+/* KPI Cards */
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary);
+}
+
+.kpi-card.kpi-indigo::before { background: var(--indigo); }
+.kpi-card.kpi-emerald::before { background: var(--emerald); }
+.kpi-card.kpi-amber::before { background: var(--amber); }
+.kpi-card.kpi-rose::before { background: var(--rose); }
+
+.kpi-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.kpi-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.kpi-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Content Cards */
+.lab-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+.lab-card-header {
+  padding: 0.85rem 1.25rem;
+  background-color: #f8fafc;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lab-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.lab-card-body {
+  padding: 1.25rem;
+}
+
+/* Academic Callouts / Interpretations */
+.academic-callout {
+  background-color: #f8fafc;
+  border-left: 4px solid var(--primary);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.academic-callout.callout-success {
+  background-color: var(--emerald-light);
+  border-left-color: var(--emerald);
+  color: #064e3b;
+}
+
+.academic-callout.callout-warning {
+  background-color: var(--amber-light);
+  border-left-color: var(--amber);
+  color: #78350f;
+}
+
+.academic-callout.callout-danger {
+  background-color: var(--rose-light);
+  border-left-color: var(--rose);
+  color: #881337;
+}
+
+.academic-callout.callout-info {
+  background-color: var(--primary-light);
+  border-left-color: var(--primary);
+  color: #1e3a8a;
+}
+
+.academic-callout-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Equation Badge */
+.formula-badge {
+  background-color: #0f172a;
+  color: #38bdf8;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin: 0.5rem 0;
+  border: 1px solid #1e293b;
+}
+
+/* Presentation Demo Mode Banner */
+.demo-banner {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: white;
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #334155;
+  box-shadow: var(--shadow-md);
+}
+
+.demo-step-badge {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Custom Table Styling */
+.table-academic {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table-academic th {
+  background-color: #f1f5f9;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.6rem 0.85rem;
+  border-bottom: 2px solid var(--border-color);
+  color: var(--text-muted);
+}
+
+.table-academic td {
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table-academic tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* Button Styling */
+.btn-primary-custom {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+/* Subtle animation for tabs */
+.tab-pane {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}

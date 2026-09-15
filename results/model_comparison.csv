@@ -1,0 +1,6 @@
+"Model","Task","R_Function","Accuracy","F_Score","Reported_Accuracy"
+"Logistic Regression","Binary: versicolor vs virginica","glm(family = binomial)",0.94,0.94,0.94
+"Decision Tree (Depth 3)","Three-class Iris","rpart(maxdepth = 3)",0.977777777777778,0.977753058954394,0.9778
+"Decision Tree (Unrestricted)","Three-class Iris","rpart(unrestricted)",0.933333333333333,0.932659932659933,0.9333
+"KNN (k=5, Raw)","Three-class Iris","class::knn(raw)",0.977777777777778,0.977753058954394,0.9778
+"KNN (k=5, Normalised)","Three-class Iris","class::knn(min-max)",0.933333333333333,0.933259176863181,0.9333
